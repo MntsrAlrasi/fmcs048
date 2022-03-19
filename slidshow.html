@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlidShow</title>
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="font-awesome.min.css   ">
+</head>             
+
+<body>
+    <div class="continer">
+        <header class="nav-area">
+            <nav>
+                <img class="Logo" src="rs.png" alt="">
+                <ul>
+                    <li> <a href="index.html">الرئسية</a></li>
+                    <li> <a href="htts://google.com">الاقمـــشة</a></li>
+                    <li> <a href="VC.html">من نحــــن</a></li>
+                    <li> <a href="Login.html"> تسجيل الدخول </a></li>
+
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="imges">
+            <img src="images(1).jpg" alt="">
+        </div>
+        <div class="imges">
+            <img src="images(2).jpg" alt="">
+        </div>
+        <div class="imges">
+            <img src="images(3).jpg" alt="">
+        </div>
+        <div class="imges">
+            <img src="images(4).jpg" alt="">
+        </div>
+        <div class="imges">
+            <img src="images(5).jpg" alt="">
+        </div>
+        <div class="imges">
+            <img src="images(7).jpg" alt="">
+        </div>
+        <div class="button">
+            <a onclick="nextimg(-1)" class="prev">&#10094;</a>
+            <a onclick="nextimg(1)" class="next">&#10095;</a>
+        </div>
+        <div class="dots">
+            <span class="dot" onclick="currentslide(1)"></span>
+            <span class="dot" onclick="currentslide(2)"></span>
+            <span class="dot" onclick="currentslide(3)"></span>
+            <span class="dot" onclick="currentslide(4)"></span>
+            <span class="dot" onclick="currentslide(5)"></span>
+        </div>
+    </div>
+    <script>
+        var imageno = 1;
+        displayimg(imageno);
+
+        function nextimg(n) {
+            displayimg(imageno += n)
+        }
+
+        function currentslide(n) {
+            displayimg(imageno += n)
+        }
+        function displayimg(n) {
+            var i;
+            var imges = document.getElementsByClassName("imges");
+            var dots = document.getElementsByClassName("dot");
+
+            if (n > imges.length) {
+                imageno = 1;
+
+            }
+            if (n < 1) {
+                imageno = imges.length;
+            }
+            for (i = 0; i < imges.length; i++) {
+                imges[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("active", "")
+            }
+
+            imges[imageno - 1].style.display = "block";
+            dots[imageno - 1].className += "active";
+
+        }
+    </script>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="Contner">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>عن المعرض</h4>
+                    <ul>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">السياسة والخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4> المــساعدات</h4>
+                    <ul>
+                        <li><a href="#">طرق الدفع </a></li>
+                        <li><a href="#">بنكك : 2372675 </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تسوق اونلاين</h4>
+                    <ul>
+                        <li><a href="https://www.google.com/search?q=%D8%A7%D9%82%D9%85%D8%B4%D8%A9+%D8%A7%D9%84%D8%AA%D9%86%D8%AC%D9%8A%D8%AF&oq=%D8%A7%D9%82%D9%85%D8%B4%D8%A9+%D8%A7%D9%84%D8%AA%D9%86%D8%AC%D9%8A%D8%AF&aqs=chrome.0.0i19l3j0i19i22i30l7.11395j0j15&sourceid=chrome&ie=UTF-8">الخامات</a></li>
+                        <li><a href="https://www.google.com/search?q=%D8%A7%D9%84%D9%88%D8%A7%D9%86+%D9%82%D9%85%D8%A7%D8%B4+%D8%A7%D9%84%D8%AA%D9%86%D8%AC%D9%8A%D8%AF&ei=55k0YsrWMMPWarGul-gH&oq=%D8%A7%D9%84%D9%88%D8%A7%D9%86+%D8%A7%D9%84%D9%82%D9%85%D8%B4%D8%A9+%D8%A7%D9%84%D8%AA%D9%86%D8%AC%D9%8A%D8%AF&gs_lcp=Cgdnd3Mtd2l6EAEYATIECAAQEzIICAAQFhAeEBMyCAgAEBYQHhATMggIABAWEB4QEzIICAAQFhAeEBMyCAgAEBYQHhATMggIABAWEB4QEzIICAAQFhAeEBMyCAgAEBYQHhATOgcIABBHELADOgsILhCABBDHARCvAToGCAAQFhAeOgUIABCABDoRCAAQ6gIQtAIQigMQtwMQ5QI6DggAEI8BEOoCEIwDEOUCOg4ILhCPARDqAhCMAxDlAjoRCC4QgAQQsQMQgwEQxwEQ0QM6CwgAEIAEELEDEIMBOggIABCxAxCDAToLCC4QgAQQsQMQgwE6CAguELEDEIMBOgUILhCABDoICAAQgAQQsQM6CAguEIAEENQCSgQIQRgASgQIRhgAUOYFWMxhYLWgAWgCcAF4BoAB6xaIAayvAZIBEjItMi4yLjMuMTAuNC4yLjMuMZgBAKABAbABCsgBCMABAQ&sclient=gws-wiz">الالوان</a></li>
+                        <li><a href="#">الاسعار</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>متابعة</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer -->
+</body>
+
+</html>

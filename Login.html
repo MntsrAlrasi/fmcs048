@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="LogDesgin.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+</head>
+
+<body>
+    <!-- heder start-->
+    <header class="nav-area">
+        <nav>
+            <img class="Logo" src="rs.png" alt="">
+            <ul>
+                <li> <a href="VC.html"> من نحن</a></li>
+                <li> <a href="Login.html"> تسجيل الدخول</a></li>
+                <li> <a href="slidshow.html"> المعرض</a></li>
+                <li> <a href="index.html">الرئسية</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- header end-->
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login">تسجيل الدخول</div>
+            <div class="title signup">إنشا حساب</div>
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login"> تسجيل الدخول</label>
+                <label for="signup" class="slide signup">إنشا حساب</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="#" class="login">
+                    <div class="field">
+                        <input type="text" placeholder="ادخل الايميل" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="ادخل كلمة السر  " required>
+                    </div>
+                    <div class="pass-link"><a href="#">هل نسيت كلمة السر؟</a></div>
+                    <div class="field btn">
+                        <!-- <div class="btn-layer"></div> -->
+                        <!-- <input type="submit" value="تسجيل الدخول" > -->
+                        <a class="a1" href="slidshow.html">تسجيل الدخول</a>
+                    </div>
+                    <div class="signup-link">هل نسيت الحساب؟<a href="">انشاء حساب الان</a></div>
+                </form>
+                <form action="#" class="signup">
+                    <div class="field">
+                        <input type="text" placeholder="ادخل الايميل" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="ادخل كلمة السر" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="تاكيد كلمة لسر" required>
+                    </div>
+                    <div class="field btn">
+                        <!-- <div class="btn-layer"></div> -->
+                        <input type="submit" value="انشاء حساب">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- start footer -->
+    <footer class="footer">
+        <div class="Contner">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>عن المعرض</h4>
+                    <ul>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">الخدمات</a></li>
+                        <li><a href="#">السياسة والخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4> المــساعدات</h4>
+                    <ul>
+                        <li><a href="#">طرق الدفع </a></li>
+                        <li><a href="#">بنكك : 2372675 </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تسوق اونلاين</h4>
+                    <ul>
+                        <li><a href="#">الخامات</a></li>
+                        <li><a href="#">الالوان</a></li>
+                        <li><a href="#">الاسعار</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>متابعة</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <script>
+        const loginText = document.querySelector(".title-text .login");
+        const loginForm = document.querySelector("form.login");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const signupLink = document.querySelector("form .signup-link a");
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script>
+
+</body>
+
+</html>
